@@ -1,4 +1,7 @@
-
+# Divoom Hack
+# @Tchoow
+#
+# Imports
 import os
 import sys, getopt
 import random
@@ -12,20 +15,15 @@ import socket
 from colour import Color
 from PIL import Image, ImageDraw, ImageFont
 from itertools import product
-
 from playsound import playsound
 from requests import get
-
 import json
 import bs4
 from bs4 import BeautifulSoup
 
-
-
-target_name = "My Phone"
+# Infos
+target_name    = "Mon haut-parleur"
 target_address = "11:75:58:1B:52:85"
-
-
 nearby_devices = bluetooth.discover_devices()
 
 for bdaddr in nearby_devices:
@@ -33,6 +31,7 @@ for bdaddr in nearby_devices:
         target_address = bdaddr
         break
 
+# Connexion
 if target_address is not None:
     print ( "Appareil trouvé", target_address )
 else:
@@ -135,13 +134,9 @@ def load_gif_frames(file, sz=11, scale=None):
             yield process_image(f, sz, scale)
 
 file = "count.png"
+url  = "https://www.instagram.com/xxxxxx"
 
-url = "https://www.instagram.com/mat.sansen/"
-
-
-
-# gif:
-
+# gif:mat.sansen/
 def getFrames(im):
     '''
     Iterate the GIF, extracting each frame.
@@ -209,12 +204,11 @@ while (1):
             html_soup = BeautifulSoup(response.text, 'html.parser')
             type(html_soup)
 
-
-
             img = Image.new('RGB', (11, 11), color = (0, 0, 0))
             fnt = ImageFont.truetype('font2.ttf', 8)
             d = ImageDraw.Draw(img)
             
+            # Choix des numéros
             first=input("1:")
             sec=input("2:")
             third=input("3:")
@@ -231,9 +225,6 @@ while (1):
     if ( text == "anim"):
         print("animation")
 
-
-
 s.close()
-
 #s.send(bytes([0x01] + mask([0x04, 0x00, 0x05, 0x01, 0x0a, 0x00]) + [0x02]))
 
