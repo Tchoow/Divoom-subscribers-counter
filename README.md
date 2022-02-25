@@ -1,5 +1,6 @@
 # Description📜
-[ BETA version of the project ]
+⚠️ [ BETA version of the project ] ⚠️
+
 
 This project is a hack for the Divoom Time-box product. The python script allows you to display the number of subscribers of an Instagram user.
 You can easily change the username to your own to get the program working.
